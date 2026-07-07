@@ -1,21 +1,28 @@
 import cv2
 
-stream = cv2.VideoCapture(0)
 
-if not stream.isOpened():
-    print("Error: Could not open video stream")
-    exit()
+def launch_camera():
+    stream = cv2.VideoCapture(0)
 
-while(True):
-    ret, frame = stream.read()
-    if not ret:
-        print("Error: Could not read frame")
-        break
+    if not stream.isOpened():
+        print("Error: Could not open video stream")
+        return
 
-    cv2.imshow('Video Stream', frame)
+    try:
+        while True:
+            ret, frame = stream.read()
+            if not ret:
+                print("Error: Could not read frame")
+                break
 
-    if cv2.waitKey(1)  == ord('q'):
-        break
+            cv2.imshow("Video Stream", frame)
 
-stream.release()
-cv2.destroyAllWindows()
+            if cv2.waitKey(1) == ord("q"):
+                break
+    finally:
+        stream.release()
+        cv2.destroyAllWindows()
+
+
+if __name__ == "__main__":
+    launch_camera()
