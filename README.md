@@ -1,6 +1,6 @@
 # Ergonomic Monitor Tracker
 
-A real-time computer vision system that uses your webcam and MediaPipe Face Mesh to track your posture and head position relative to your monitor. It measures sitting distance, horizontal/vertical alignment, and head orientation — then gives live on-screen feedback and logs recommendations for future monitor control hardware integration.
+A real-time computer vision system that uses your webcam and MediaPipe Face Mesh to track your posture and head position relative to your monitor. It measures sitting distance, horizontal/vertical alignment, and head orientation. It then gives live on-screen feedback and logs recommendations for future monitor control hardware integration.
 
 ---
 
